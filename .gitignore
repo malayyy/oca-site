@@ -32,3 +32,4 @@ coverage
 # Test
 src/sandbox
 .vercel
+.env
