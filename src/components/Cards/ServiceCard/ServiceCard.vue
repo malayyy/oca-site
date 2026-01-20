@@ -134,4 +134,23 @@ const glowStyle = computed(() => ({
     transition: opacity 0.3s ease;
     z-index: 1;
 }
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .service-card {
+        padding: 24px;
+        text-align: center; /* Center text */
+    }
+
+    .card-content {
+        align-items: center; /* Center flex items */
+    }
+
+    .icon-wrapper {
+        margin: 0 auto 15px; /* Center icon */
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+}
 </style>

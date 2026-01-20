@@ -1,31 +1,63 @@
 @import './main.css';
 
 @media screen and (max-width: 1279px) {
-
     body {
         margin: 0;
         width: 100%;
     }
+}
 
+@media screen and (max-width: 768px) {
+
+    /* Global Mobile Alignment Fixes */
+    .container {
+        padding: 0 20px;
+        /* Consistent padding */
+        text-align: center;
+        /* Default to center for many sections */
+    }
+
+    h1,
+    h2,
+    .section-title,
+    .hero-title {
+        text-align: center;
+    }
+
+    p,
+    .section-desc,
+    .hero-subtitle {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Ensure buttons center if they are inline-block */
+    .btn-primary,
+    .btn-glass,
+    button,
+    .cta-button {
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 620px) {
-
     body {
-        margin: 0 10px;
-        align-items: initial;
+        margin: 0;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     h1 {
-        font-size: 43px;
-    }
-
-    h2 {
         font-size: 36px;
     }
 
+    h2 {
+        font-size: 32px;
+    }
+
     h3 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     h4 {
@@ -35,5 +67,4 @@
     p {
         font-size: 16px;
     }
-
 }

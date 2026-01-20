@@ -218,4 +218,19 @@ onUnmounted(() => {
 
 .hamburger-inner::before { top: -8px; }
 .hamburger-inner::after { bottom: -8px; }
+
+/* Mobile Navbar Specifics */
+@media (max-width: 768px) {
+    .nav-wrapper {
+        padding: 0 10px; /* Tighter padding for mobile */
+    }
+    
+    .logo-text {
+        font-size: 1.1rem; /* Slightly smaller logo text */
+    }
+    
+    .menu-trigger {
+        padding: 5px; /* Reduce padding to align better */
+    }
+}
 </style>
