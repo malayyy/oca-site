@@ -137,7 +137,7 @@ const glowStyle = computed(() => ({
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .service-card {
-        padding: 24px;
+        padding: 15px; /* Tighter padding */
         text-align: center; /* Center text */
     }
 

@@ -29,17 +29,17 @@ const props = defineProps({
 
 #title {
     flex-shrink: 0;
-
-    background-color: var(--primary-color);
-    border-radius: 7px;
-    color: var(--secondary-color);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: var(--text-main);
     width: max-content;
-    padding: 0 10px;
-    place-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 #desc {
     max-width: 600px;
+    font-size: 1rem;
+    color: var(--text-muted);
 }
 
 /* RESPONSIVE */

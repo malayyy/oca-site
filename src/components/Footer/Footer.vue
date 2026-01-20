@@ -162,40 +162,6 @@ footer {
 }
 
 /* RESPONSIVE */
-@media screen and (max-width: 768px) {
-    #contacts {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    #navigations {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    #links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    #rights {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-}
-
-/* LISTENERS */
-#socials .logo:hover {
-    background-color: var(--primary-color);
-}
-
-#socials a:hover>svg>path {
-    fill: var(--primary-color);
-}
-
-/* RESPONSIVE */
 @media screen and (max-width: 999px) {
     #contacts {
         flex-direction: column;
@@ -204,73 +170,36 @@ footer {
     }
 }
 
-@media screen and (max-width: 919px) {
-    #navigations {
-        flex-direction: column;
-        gap: 30px;
-        align-items: initial;
-        justify-content: initial;
-    }
-}
-
-@media screen and (max-width: 720px) {
-    #virtual-info {
-        min-width: initial;
-    }
-}
-
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 768px) {
     footer {
-        padding: 55px 40px;
-    }
-
-    #links {
-        flex-wrap: wrap;
-    }
-
-    #virtual-info .wrapper {
-        flex-direction: column;
-    }
-
-    #virtual-info #email-input {
-        height: 68px;
-    }
-
-    #virtual-info input {
-        background-color: transparent;
-        border: 0;
-        color: var(--white);
-        width: 100%;
-        outline: none;
-    }
-}
-
-@media screen and (max-width: 520px) {
-    footer {
-        padding: 55px 20px;
-        align-items: center;
-    }
-
-    #navigations {
-        align-items: center;
-    }
-
-    #links {
-        flex-direction: column;
-    }
-
-    #physical-info {
-        max-width: initial;
-        align-items: center;
+        padding: 50px 20px;
         text-align: center;
     }
 
-    #physical-info #address-info {
-        max-width: 320px;
+    #navigations, #links, #contacts, #physical-info, #rights {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    #links {
+        gap: 20px;
     }
 
-    #rights {
-        flex-direction: column;
+    .contact-item {
+        align-items: center;
+    }
+    
+    .contact-value {
+        text-align: center;
+        word-break: break-word; /* Prevent overflow */
+    }
+    
+    /* Ensure footer buttons center */
+    button, .cta-button {
+        margin: 0 auto;
     }
 }
 </style>

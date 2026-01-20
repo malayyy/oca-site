@@ -92,4 +92,10 @@ const projects = [
 .learn-more:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .content {
+        text-align: center;
+    }
+}
 </style>
