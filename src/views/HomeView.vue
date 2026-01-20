@@ -54,8 +54,12 @@ section {
 
 @media screen and (max-width: 620px) {
     section {
+        margin-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    section:first-child {
         margin-top: 0;
-        padding-bottom: 70px;
     }
 }
 </style>

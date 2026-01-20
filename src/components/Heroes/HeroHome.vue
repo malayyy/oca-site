@@ -325,7 +325,14 @@ import { onMounted } from 'vue';
         margin-bottom: 15px;
         line-height: 1.2;
     }
-    
+       .btn-primary[data-v-bd271e04], .btn-glass[data-v-bd271e04] {
+        width: 100%;
+        justify-content: center;
+        padding: 0 2px;
+        font-size: 0.95rem;
+        height: 48px;
+        border-radius: 12px;
+    } 
     .hero-subtitle { 
         margin: 0 auto 25px; 
         font-size: 0.95rem; 

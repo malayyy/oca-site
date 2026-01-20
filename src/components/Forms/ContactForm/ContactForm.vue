@@ -202,7 +202,7 @@ async function handleSubmit() {
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
 }
 
 .input-group {
@@ -223,7 +223,7 @@ async function handleSubmit() {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    padding: 16px 20px;
+    padding: 16px 5px;
     color: var(--text-main);
     font-size: 1rem;
     font-family: var(--font-body);

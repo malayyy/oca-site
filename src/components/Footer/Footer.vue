@@ -171,67 +171,90 @@ footer {
 
 @media screen and (max-width: 768px) {
     footer {
-        padding: 50px 20px 30px;
-        text-align: center;
+        padding: 40px 20px 25px;
+        text-align: left;
         border-radius: 30px 30px 0 0;
     }
 
     #navigations {
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 25px;
-        margin-bottom: 50px;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 35px;
+    }
+    
+    #icon {
+        margin-bottom: 5px;
     }
     
     #links {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 15px;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    #links .link {
+        font-size: 0.85rem !important;
     }
     
     #contacts {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 30px;
     }
     
     #physical-info {
-        align-items: center;
-        text-align: center;
-        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 
     .contact-item {
-        align-items: center;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .contact-label {
+        font-size: 0.7rem !important;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-muted);
     }
     
     .contact-value {
-        text-align: center;
-        word-break: break-word;
-        font-size: 1.1rem;
+        font-size: 0.85rem !important;
+        line-height: 1.4;
+    }
+    
+    .contact-value a {
+        font-size: 0.85rem !important;
     }
     
     #virtual-info {
-        padding: 30px 20px;
-        text-align: center;
+        padding: 20px 0;
     }
     
     #virtual-info p {
-        font-size: 1rem;
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
     }
     
     #rights {
         flex-direction: column;
-        gap: 20px;
-        padding-top: 25px;
-        text-align: center;
+        gap: 12px;
+        padding-top: 20px;
+        align-items: flex-start;
     }
     
     #copyright {
-        text-align: center;
+        font-size: 0.75rem !important;
+    }
+    
+    #rights a {
+        font-size: 0.75rem !important;
     }
 }
 

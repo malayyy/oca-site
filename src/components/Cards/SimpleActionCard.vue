@@ -6,7 +6,9 @@
                 <p id="desc">
                     {{ desc }}
                 </p>
-                <BasicButton :text="'Get your free proposal'" :type="2" />
+                <div @click="scrollToContact">
+                    <BasicButton :text="'Get your free proposal'" :type="2" />
+                </div>
             </div>
             <picture id="icon" v-html="icon">
             </picture>
@@ -20,6 +22,13 @@ const props = defineProps({
     desc: { type: String, required: true },
     icon: { type: String, required: true }
 });
+
+const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+};
 </script>
 
 <style scoped>
