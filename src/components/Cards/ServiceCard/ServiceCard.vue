@@ -64,16 +64,23 @@ const glowStyle = computed(() => ({
     padding: 30px;
     border-radius: 20px;
     overflow: hidden;
-    transition: transform 0.1s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform-style: preserve-3d;
     cursor: pointer;
-    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(20,20,20,0.4) 100%);
+
+    /* Pure Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px 0 rgba(0, 168, 176, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .card-content {
@@ -111,16 +118,17 @@ const glowStyle = computed(() => ({
 }
 
 .card-link {
-    color: var(--neon-accent);
+    color: #000000;
     text-decoration: none;
     font-weight: 600;
     margin-top: 10px;
     display: inline-block;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .service-card:hover .card-link {
     transform: translateX(5px);
+    color: var(--primary-color);
 }
 
 .card-glow {
