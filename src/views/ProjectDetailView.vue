@@ -190,12 +190,11 @@ p {
     }
     
     .project-header {
-        margin-right: 20px;
+        margin-bottom: 30px;
     }
     
     .project-content {
         padding: 30px 20px;
-        margin-right: 20px;
     }
 }
 
@@ -204,13 +203,8 @@ p {
         padding: 70px 16px 50px;
     }
     
-    .project-header {
-        margin-right: 16px;
-    }
-    
     .project-content {
-        padding: 25px 25px;
-        margin-right: 25px;
+        padding: 25px 20px;
     }
 }
 </style>

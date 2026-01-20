@@ -1,7 +1,7 @@
 <template>
     <button type="button" class="component basic-btn" :style="CheckLongWidth() ?
         { '--width': `${width + 300}px` } : null
-        " :class="{ 'type-1': type === 1, 'type-2': type === 2, 'type-3': type === 3, }" ref="component"
+        " :class="{ 'type-1': type === 1, 'type-2': type === 2, 'type-3': type === 3, 'pill': pill }" ref="component"
         @mouseenter="BackgroundAnimation()" @mouseleave="BackgroundAnimation()">
         <span id="text">{{ text }}</span>
         <span id="bg-color" :class="{ hover: isHover, blur: isBlur }"></span>
@@ -13,7 +13,8 @@ import { defineProps, onMounted, ref } from 'vue';
 
 const props = defineProps({
     text: { type: String, default: 'Button Text' },
-    type: { type: Number, default: 1 }
+    type: { type: Number, default: 1 },
+    pill: { type: Boolean, default: false }
 });
 
 const component = ref(null);
@@ -56,6 +57,13 @@ function BackgroundAnimation() {
     padding: 0 34px;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.basic-btn.pill {
+    border-radius: 9999px;
 }
 
 .basic-btn #text {
@@ -90,7 +98,8 @@ function BackgroundAnimation() {
 
 /* TYPES */
 .basic-btn.type-2 {
-    background-color: var(--secondary-color);
+    background-color: var(--text-main); /* Was secondary-color */
+    border-color: var(--text-main);
 }
 
 .basic-btn.type-2 #text {
@@ -103,14 +112,14 @@ function BackgroundAnimation() {
 }
 
 .basic-btn.type-3 #text {
-    color: var(--secondary-color);
+    color: var(--white);
     transition: 0.1s;
     transition-delay: 0.05s;
 }
 
 .basic-btn.type-3 #bg-color {
-    background-color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
+    background-color: var(--text-main); /* Was secondary-color */
+    border: 2px solid var(--text-main);
 }
 
 /* LISTENERS */
@@ -121,6 +130,4 @@ function BackgroundAnimation() {
 .basic-btn.type-3:hover #text {
     color: var(--white);
 }
-
-;
 </style>

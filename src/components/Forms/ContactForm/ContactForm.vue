@@ -220,10 +220,10 @@ async function handleSubmit() {
 
 .premium-input {
     width: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 168, 176, 0.05); /* Very subtle primary color tint */
+    border: 1px solid rgba(0, 168, 176, 0.2); /* Primary color border */
     border-radius: 12px;
-    padding: 16px 5px;
+    padding: 16px 20px;
     color: var(--text-main);
     font-size: 1rem;
     font-family: var(--font-body);
@@ -233,8 +233,8 @@ async function handleSubmit() {
 
 .premium-input:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(0, 168, 176, 0.1);
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 168, 176, 0.08);
+    box-shadow: 0 0 0 4px rgba(0, 168, 176, 0.15);
 }
 
 .premium-input.text-area {

@@ -3,7 +3,7 @@
         <p id="text">
             {{ text }}
         </p>
-        <SimpleLinkButton />
+        <SimpleLinkButton :to="to" />
     </div>
 </template>
 
@@ -13,7 +13,8 @@ import SimpleLinkButton from '../Buttons/SimpleLinkButton/SimpleLinkButton.vue';
 
 const props = defineProps({
     id: { type: String, default: 'middle' },
-    text: { type: String, default: 'This is a placeholder to be changed!' }
+    text: { type: String, default: 'This is a placeholder to be changed!' },
+    to: { type: [String, Object], default: null }
 });
 </script>
 
@@ -28,13 +29,13 @@ const props = defineProps({
 }
 
 #text {
-    color: var(--white);
+    color: black; /* Strictly black as requested - was var(--white) */
 }
 
 #middle {
     padding: 0 50px;
-    border-left: 2px solid var(--white);
-    border-right: 2px solid var(--white);
+    border-left: 2px solid var(--text-main); /* Was var(--white) */
+    border-right: 2px solid var(--text-main); /* Was var(--white) */
 }
 
 /* RESPONSIVE */
@@ -51,8 +52,8 @@ const props = defineProps({
     #middle {
         border-left: 0;
         border-right: 0;
-        border-top: 2px solid var(--white);
-        border-bottom: 2px solid var(--white);
+        border-top: 2px solid var(--text-main); /* Was var(--white) */
+        border-bottom: 2px solid var(--text-main); /* Was var(--white) */
         padding: 40px 0;
     }
 }

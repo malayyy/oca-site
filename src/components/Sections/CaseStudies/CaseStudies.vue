@@ -5,11 +5,14 @@
             class="title" />
         <UseCase>
             <UseCaseCard :id="'left'"
-                :text="'Architect Taranum Kadri (IIID Chairperson): Project of 30HP (10,000sqft Bunglow).'" />
+                :text="'Architect Taranum Kadri (IIID Chairperson): Project of 30HP (10,000sqft Bunglow).'"
+                :to="{ name: 'project-detail', params: { id: 1 } }" />
             <UseCaseCard
-                :text="'Architect Hemant Duggad (IIID Ex chairperson): Project of 20 Ton (2000sqft Corporate office Nashik).'" />
+                :text="'Architect Hemant Duggad (IIID Ex chairperson): Project of 20 Ton (2000sqft Corporate office Nashik).'"
+                :to="{ name: 'project-detail', params: { id: 2 } }" />
             <UseCaseCard :id="'right'"
-                :text="'Architech Jiual Shaikh - Iconic designs: Residential Projects at Nathani Heights (12 Ton), Lodha Park (16 Ton), etc.'" />
+                :text="'Architech Jiual Shaikh - Iconic designs: Residential Projects at Nathani Heights (12 Ton), Lodha Park (16 Ton), etc.'"
+                :to="{ name: 'project-detail', params: { id: 3 } }" />
         </UseCase>
     </section>
 </template>

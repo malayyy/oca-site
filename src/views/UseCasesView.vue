@@ -5,9 +5,10 @@
             <p>Real-world examples of our excellence.</p>
         </section>
 
-        <Projects />
-        <CaseStudies />
-
+        <div class="sections-wrapper">
+            <Projects />
+            <CaseStudies />
+        </div>
     </MainLayout>
 </template>
 
@@ -21,5 +22,19 @@ import CaseStudies from '@/components/Sections/CaseStudies/CaseStudies.vue';
 .page-header {
     text-align: center;
     padding: 100px 20px 20px;
+}
+
+.sections-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* Added spacing between sections */
+    margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+    .sections-wrapper {
+        gap: 60px;
+        margin-bottom: 60px;
+    }
 }
 </style>

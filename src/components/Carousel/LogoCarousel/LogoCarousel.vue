@@ -1,32 +1,11 @@
 <template>
-    <div class="component logo-carousel running">
-        <!-- Row 1: Moving Left -->
-        <div class="layer">
-            <div class="logo-container slide-left">
-                <picture class="logo" v-for="(logo, index) in logos" :key="index" v-html="logo.logo" :id="`logo-r1-${index}`"></picture>
-            </div>
-            <div class="logo-container slide-left">
-                <picture class="logo" v-for="(logo, index) in logos" :key="index+'-copy'" v-html="logo.logo" :id="`logo-r1-c-${index}`"></picture>
-            </div>
-        </div>
-
-        <!-- Row 2: Moving Right -->
-        <div class="layer">
-            <div class="logo-container slide-right">
-                <picture class="logo" v-for="(logo, index) in logosReversed" :key="index" v-html="logo.logo" :id="`logo-r2-${index}`"></picture>
-            </div>
-            <div class="logo-container slide-right">
-                <picture class="logo" v-for="(logo, index) in logosReversed" :key="index+'-copy'" v-html="logo.logo" :id="`logo-r2-c-${index}`"></picture>
-            </div>
-        </div>
-
-        <!-- Row 3: Moving Left (Slower/Different) -->
-        <div class="layer">
-            <div class="logo-container slide-left slow">
-                <picture class="logo" v-for="(logo, index) in logos" :key="index" v-html="logo.logo" :id="`logo-r3-${index}`"></picture>
-            </div>
-            <div class="logo-container slide-left slow">
-                <picture class="logo" v-for="(logo, index) in logos" :key="index+'-copy'" v-html="logo.logo" :id="`logo-r3-c-${index}`"></picture>
+    <div class="component logo-carousel">
+        <div class="marquee-wrapper">
+             <!-- Duplicate the logo set multiple times for seamless scrolling on wide screens -->
+            <div class="marquee-content slide-left">
+                <div class="logo-item" v-for="(logo, index) in displayLogos" :key="'g1-'+index" v-html="logo.logo"></div>
+                 <div class="logo-item" v-for="(logo, index) in displayLogos" :key="'g2-'+index" v-html="logo.logo"></div>
+                 <div class="logo-item" v-for="(logo, index) in displayLogos" :key="'g3-'+index" v-html="logo.logo"></div>
             </div>
         </div>
     </div>
@@ -39,133 +18,104 @@ const props = defineProps({
     logos: { type: Array, required: true },
 });
 
-const logosReversed = computed(() => [...props.logos].reverse());
+// If the logo list is short, we might want to double it up in the prop itself,
+// but for now, we just repeat the loop in the template.
+const displayLogos = computed(() => props.logos);
 </script>
 
 <style scoped>
 .logo-carousel {
-    margin-bottom: 125px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px; /* Increased gap between rows */
+    margin-bottom: 80px;
+    padding: 40px 0;
     overflow: hidden;
     position: relative;
-    padding: 20px 0;
-    -webkit-mask-image: linear-gradient(to left, transparent 0%, black 10% 90%, transparent 100%);
-    mask-image: linear-gradient(to left, transparent 0%, black 10% 90%, transparent 100%);
+    background: transparent;
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%);
 }
 
-.layer {
+.marquee-wrapper {
     display: flex;
-    width: max-content; /* Ensure container fits content */
+    overflow: hidden;
+    width: 100%;
 }
 
-.logo-container {
+.marquee-content {
     display: flex;
-    align-items: center;
     gap: 80px; /* Space between logos */
-    padding-right: 80px; /* Match gap for seamless loop */
+    padding-right: 80px; /* Match gap */
+    width: max-content;
+    will-change: transform;
 }
 
-.slide-left {
-    animation: slide 30s linear infinite;
-}
-
-.slide-left.slow {
-    animation: slide 40s linear infinite;
-}
-
-.slide-right {
-    animation: slide_right 35s linear infinite;
-}
-
-.logo {
+.logo-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
-    /* Make logos bigger */
-    transform: scale(1.5); 
-    opacity: 0.8;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
 }
 
-/* Deep selector to target the SVG inside the v-html if needed */
-:deep(svg) {
-    height: 40px; /* Base height, scaled up by transform */
+/* Deep selector for SVGs/Images passed via v-html */
+:deep(svg), :deep(img) {
+    height: 45px;
     width: auto;
-    filter: grayscale(100%); /* Optional: keep them grayscale until hover */
+    /* filter: grayscale(100%) contrast(0%) brightness(0%); Removed for full color */
     transition: all 0.3s ease;
 }
 
 /* Hover effects */
-.logo:hover {
-    transform: scale(1.6);
+.logo-item:hover {
     opacity: 1;
+    transform: scale(1.1);
 }
 
-.logo:hover :deep(svg) {
-    filter: grayscale(0%);
-    fill: var(--primary-color); 
+.logo-item:hover :deep(svg),
+.logo-item:hover :deep(img) {
+    filter: none; /* Restore original colors on hover */
 }
 
-/* ANIMATIONS */
-@keyframes slide {
-    from { transform: translateX(0%); }
-    to { transform: translateX(-100%); }
+.slide-left {
+    animation: scroll 40s linear infinite;
 }
 
-@keyframes slide_right {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0%); }
+/* Pause animation on hover for better UX */
+.logo-carousel:hover .slide-left {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-33.33%); } /* Move by 1/3 since we have 3 sets */
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .logo-carousel {
-        margin-bottom: 80px;
-        gap: 35px;
-        padding: 15px 0;
+        margin-bottom: 60px;
+        padding: 20px 0;
     }
     
-    .logo-container {
+    .marquee-content {
         gap: 50px;
         padding-right: 50px;
-    }
-    
-    .logo {
-        transform: scale(1.2);
     }
     
     :deep(svg), :deep(img) {
         height: 35px;
     }
-    
-    .logo:hover {
-        transform: scale(1.3);
-    }
 }
 
-@media (max-width: 620px) {
-    .logo-carousel {
-        margin-bottom: 60px;
-        gap: 25px;
-    }
-    
-    .logo-container {
+@media (max-width: 480px) {
+    .marquee-content {
         gap: 40px;
         padding-right: 40px;
     }
     
-    .logo {
-        transform: scale(1);
-    }
-    
     :deep(svg), :deep(img) {
         height: 30px;
-    }
-    
-    .logo:hover {
-        transform: scale(1.1);
     }
 }
 </style>

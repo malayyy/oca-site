@@ -23,10 +23,10 @@
 import SectionTitle from '@/components/SectionTitle/SectionTitle.vue';
 
 const projects = [
-    { title: "Corporate Office Tower", category: "VRV System Installation", color: "linear-gradient(45deg, #00a8b0, #b9ff66)" },
-    { title: "Industrial Warehouse", category: "Chiller System", color: "linear-gradient(45deg, #FF6B6B, #FFE66D)" },
-    { title: "Luxury Residence", category: "Split & Cassette Units", color: "linear-gradient(45deg, #4ECDC4, #556270)" },
-    { title: "Retail Complex", category: "Ductable AC Maintenance", color: "linear-gradient(45deg, #A8E6CF, #DCEDC1)" }
+    { title: "Corporate Office Tower", category: "VRV System Installation", color: "linear-gradient(135deg, #00a8b0, #008f96)" },
+    { title: "Industrial Warehouse", category: "Chiller System", color: "linear-gradient(135deg, #00a8b0, #b9ff66)" },
+    { title: "Luxury Residence", category: "Split & Cassette Units", color: "linear-gradient(135deg, #008f96, #00a8b0)" },
+    { title: "Retail Complex", category: "Ductable AC Maintenance", color: "linear-gradient(135deg, #00a8b0, #ffffff)" }
 ];
 </script>
 
@@ -43,14 +43,25 @@ const projects = [
 }
 
 .project-card {
-    background: var(--bg-card);
+    /* User Provided Glass CSS (Light) */
+    background: rgba(255, 255, 255, 0.23) !important;
+    backdrop-filter: blur(34px) !important;
+    -webkit-backdrop-filter: blur(34px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 24px 12px rgba(255, 255, 255, 1.2) !important;
     border-radius: 20px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
+    border-color: rgba(0, 168, 176, 0.5); /* Teal border on hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .image-wrapper {
@@ -72,21 +83,24 @@ const projects = [
 .content h3 {
     font-size: 1.4rem;
     margin-bottom: 8px;
-    color: var(--text-main);
+    color: var(--text-main); /* Revert to Black */
 }
 
 .content p {
     font-size: 1rem;
-    color: var(--text-muted);
+    color: var(--text-muted); /* Revert to Muted Black */
     margin-bottom: 15px;
 }
 
 .learn-more {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Kept primary for contrast/visibility */
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
     display: inline-block;
+    cursor: pointer; /* Ensure pointer */
+    position: relative;
+    z-index: 10; /* Ensure clickable */
 }
 
 .learn-more:hover {

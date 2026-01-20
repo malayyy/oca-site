@@ -52,9 +52,16 @@ function CheckNavbarPanelActive() {
     width: 100%;
     max-width: 1366px;
     min-height: 100dvh;
-    margin: 50px auto 0;
+    margin: 0 auto; /* Removed 50px top margin to let Navbar handle spacing or specific sections */
+    padding-top: 80px; /* Default header height compensation */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    #main-layout {
+        padding-top: 70px;
+    }
 }
 </style>

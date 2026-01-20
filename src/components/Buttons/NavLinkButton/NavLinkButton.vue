@@ -70,7 +70,7 @@ function MoveAnimation() {
 
 /* TYPE */
 .nav-link-btn.type-2 #text  {
-    color: var(--white);
+    color: var(--text-main);
 }
 
 /* LISTENERS */

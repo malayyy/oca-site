@@ -68,23 +68,35 @@ function Expand() {
 
 .action {
     aspect-ratio: 1;
-    background-color: var(--gray);
-    border: 2px solid var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
     border-radius: 50%;
     height: 60px;
     padding: 0;
     position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: rotate(90deg);
 }
 
 .expand-line {
-    background-color: var(--secondary-color);
-    height: 5px;
-    width: 30px;
+    background-color: var(--text-main);
+    height: 2px;
+    width: 24px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: 0.2s;
+    transition: 0.3s;
+}
+
+.action:hover .expand-line {
+    background-color: var(--text-dark); /* White on hover */
 }
 
 .expand-line#vertical {

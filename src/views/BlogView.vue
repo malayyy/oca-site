@@ -81,13 +81,17 @@ p {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .blog-post {
-        margin-right: 40px !important;
+        margin-right: 0 !important; /* Reset or remove */
     }
 }
 
 @media (max-width: 620px) {
     .blog-post {
-        margin-right: 40px !important;
+        margin-right: 0 !important; /* Reset or remove */
+    }
+    
+    .blog-grid {
+        padding: 0 20px 80px; /* Ensure container padding handles spacing */
     }
 }
 </style>

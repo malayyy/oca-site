@@ -28,7 +28,7 @@ const icon = `
                         fill="#D9D9D9" />
                     <path
                         d="M112.194 306.102L135.134 264L158.258 306.102L200.269 329.134L158.258 352.166L135.134 394.269L112.194 352.166L70 329.134L112.194 306.102Z"
-                        fill="#B9FF66" />
+                        fill="black" />
                     <circle cx="152.5" cy="186.5" r="62" fill="black" stroke="black" />
                     <ellipse cx="132" cy="173" rx="10" ry="20" fill="white" />
                     <ellipse cx="173" cy="173" rx="10" ry="20" fill="white" />
