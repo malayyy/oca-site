@@ -1,0 +1,196 @@
+@import './css-reset-jc.css';
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Color Palette - Warm White Creative */
+    --bg-dark: #fcfbf9;
+    --bg-card: #f2f0eb;
+    --glass-surface: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(0, 0, 0, 0.08);
+
+    /* Brand Colors */
+    --primary-color: #00a8b0;
+    /* Teal - Keep */
+    --primary-glow: rgba(0, 168, 176, 0.2);
+    --neon-accent: #B9FF66;
+    /* Neon Green - Keep or adjust if too clashy, maybe darken slightly for light mode? Keep for now */
+    --neon-glow: rgba(185, 255, 102, 0.4);
+
+    /* Text Colors */
+    --text-main: #1a1a1a;
+    --text-muted: #555555;
+    --text-dark: #ffffff;
+    /* For buttons/chips that used to be dark on dark, now might need to be light on dark accents */
+    --text-inverse: #ffffff;
+    /* Explicitly for dark backgrounds */
+
+    /* Spacing */
+    --container-width: 1366px;
+    --header-height: 80px;
+
+    /* Fonts */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+#app {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: clamp(40px, 8vw, 72px);
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(32px, 5vw, 48px);
+}
+
+h3 {
+    font-size: clamp(24px, 3vw, 32px);
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Utilities */
+.gradient-text {
+    background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-text-neon {
+    background: linear-gradient(135deg, var(--neon-accent) 0%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-panel {
+    background: var(--glass-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    padding: 0 24px;
+    margin: 0 auto;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 168, 176, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 168, 176, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 168, 176, 0);
+    }
+}
+
+/* Selection */
+::selection {
+    background-color: var(--primary-color);
+    color: var(--text-main);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}

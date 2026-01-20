@@ -1,0 +1,95 @@
+<template>
+    <section id="projects" class="animate-fade-up">
+        <SectionTitle :title="'Our Work'" :desc="'A selection of our recent HVAC implementations'" class="title" />
+        
+        <div class="projects-grid">
+            <div v-for="(project, index) in projects" :key="index" class="project-card">
+                <div class="image-wrapper">
+                    <div class="placeholder-img" :style="{ background: project.color }"></div>
+                </div>
+                <div class="content">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.category }}</p>
+                    <RouterLink :to="{ name: 'project-detail', params: { id: index + 1 } }" class="learn-more">
+                        See Details →
+                    </RouterLink>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script setup>
+import SectionTitle from '@/components/SectionTitle/SectionTitle.vue';
+
+const projects = [
+    { title: "Corporate Office Tower", category: "VRV System Installation", color: "linear-gradient(45deg, #00a8b0, #b9ff66)" },
+    { title: "Industrial Warehouse", category: "Chiller System", color: "linear-gradient(45deg, #FF6B6B, #FFE66D)" },
+    { title: "Luxury Residence", category: "Split & Cassette Units", color: "linear-gradient(45deg, #4ECDC4, #556270)" },
+    { title: "Retail Complex", category: "Ductable AC Maintenance", color: "linear-gradient(45deg, #A8E6CF, #DCEDC1)" }
+];
+</script>
+
+<style scoped>
+#projects {
+    margin-top: 100px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.image-wrapper {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.content {
+    padding: 25px;
+}
+
+.content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.content p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.learn-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+</style>
