@@ -49,4 +49,21 @@ const processes = [
     flex-direction: column;
     gap: 35px;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #working-process {
+        padding: 0 20px;
+    }
+    
+    .processes {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 620px) {
+    .processes {
+        gap: 20px;
+    }
+}
 </style>

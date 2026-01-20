@@ -107,4 +107,17 @@ li::before {
 .btn-wrapper {
     margin-top: auto;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .pricing-card {
+        margin-right: 40px !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .pricing-card {
+        margin-right: 40px !important;
+    }
+}
 </style>

@@ -46,21 +46,37 @@ const props = defineProps({
 @media screen and (max-width: 800px) {
     .component {
         flex-direction: column;
-        align-items: start;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+    }
+    
+    #title {
+        width: auto;
+    }
+    
+    #desc {
+        text-align: center;
     }
 }
 
 @media screen and (max-width: 620px) {
     .component {
-
-        margin-bottom: 40px;
-        gap: 20px;
+        margin-bottom: 30px;
+        gap: 15px;
         align-items: center;
         text-align: center;
     }
 
     #title {
-        width: auto
+        width: auto;
+        font-size: 1.75rem;
+    }
+    
+    #desc {
+        font-size: 0.95rem;
+        max-width: 100%;
+        padding: 0 10px;
     }
 }
 </style>

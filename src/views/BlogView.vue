@@ -77,4 +77,17 @@ p {
     text-decoration: none;
     font-weight: 600;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .blog-post {
+        margin-right: 40px !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .blog-post {
+        margin-right: 40px !important;
+    }
+}
 </style>

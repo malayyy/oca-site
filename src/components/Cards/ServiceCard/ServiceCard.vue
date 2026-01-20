@@ -137,20 +137,45 @@ const glowStyle = computed(() => ({
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .service-card {
-        padding: 15px; /* Tighter padding */
-        text-align: center; /* Center text */
+        padding: 25px;
+        width: 90% !important;
+        max-width: 450px !important;
+        margin: 0 auto !important;
     }
-
+    
     .card-content {
-        align-items: center; /* Center flex items */
+        align-items: center;
+        text-align: center;
     }
-
+    
     .icon-wrapper {
-        margin: 0 auto 15px; /* Center icon */
+        margin: 0 auto 15px;
     }
-
+    
     .card-title {
         font-size: 1.25rem;
+        text-align: center;
+    }
+    
+    .card-desc {
+        text-align: center;
+    }
+    
+    .card-link {
+        text-align: center;
+    }
+}
+
+@media (max-width: 620px) {
+    .service-card {
+        padding: 20px;
+        width: 90% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    .card-title {
+        font-size: 1.15rem;
     }
 }
 </style>

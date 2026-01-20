@@ -105,4 +105,51 @@ function toggle(index) {
     margin: 0;
     color: var(--text-muted);
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #faq {
+        margin-top: 60px;
+        padding: 0 20px;
+    }
+    
+    .faq-container {
+        margin: 30px auto 0;
+        padding: 0 10px;
+    }
+    
+    .faq-question {
+        padding: 18px 20px;
+        font-size: 1rem;
+    }
+    
+    .faq-question .icon {
+        font-size: 1.3rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 20px 18px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 620px) {
+    #faq {
+        margin-top: 40px;
+    }
+    
+    .faq-item {
+        border-radius: 15px;
+    }
+    
+    .faq-question {
+        padding: 16px 18px;
+        font-size: 0.95rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 18px 16px;
+        font-size: 0.9rem;
+    }
+}
 </style>

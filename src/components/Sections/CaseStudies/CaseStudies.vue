@@ -18,3 +18,18 @@
 import UseCase from '@/components/Articles/UseCase/UseCase.vue';
 import UseCaseCard from '@/components/Cards/UseCaseCard.vue';
 </script>
+
+<style scoped>
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #projects {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 620px) {
+    #projects {
+        padding: 0 16px;
+    }
+}
+</style>

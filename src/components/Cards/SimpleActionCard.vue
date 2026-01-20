@@ -120,12 +120,25 @@ const props = defineProps({
     }
 }
 
+@media screen and (max-width: 768px) {
+    .simple-action-card {
+        width: calc(100% - 40px) !important;
+        margin: 0 20px !important;
+        box-sizing: border-box !important;
+    }
+}
+
 @media screen and (max-width: 620px) {
+    .simple-action-card {
+        width: calc(100% - 32px) !important;
+        margin: 0 16px !important;
+    }
+    
     .action-info {
         --padding: 60px;
-
         align-items: initial;
         max-width: 90%;
+        margin-right: 42px;
     }
 
     #icon {

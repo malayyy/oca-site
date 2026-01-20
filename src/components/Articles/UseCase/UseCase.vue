@@ -28,13 +28,26 @@
 @media screen and (max-width: 920px) {
     .wrapper {
         flex-direction: column;
+        padding: 50px 40px;
+        gap: 40px;
     }
 }
 
+@media screen and (max-width: 620px) {
+    .component {
+        min-height: auto;
+    }
+    
+    .wrapper {
+        padding: 40px 25px;
+        border-radius: 30px;
+        gap: 35px;
+    }
+}
 
 @media screen and (max-width: 420px) {
     .wrapper {
-    padding: 50px 30px;
-}
+        padding: 35px 20px;
+    }
 }
 </style>

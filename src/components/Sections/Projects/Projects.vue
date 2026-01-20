@@ -94,8 +94,42 @@ const projects = [
 }
 
 @media (max-width: 768px) {
+    #projects {
+        margin-top: 60px;
+        padding: 0 20px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .project-card {
+        max-width: 100%;
+    }
+    
     .content {
         text-align: center;
+        padding: 20px;
+    }
+    
+    .content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 620px) {
+    #projects {
+        margin-top: 40px;
+    }
+    
+    .image-wrapper {
+        height: 200px;
     }
 }
 </style>

@@ -313,20 +313,86 @@ import { onMounted } from 'vue';
     transform: translate(-50%, -50%);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .hero-title { font-size: 3rem; }
-    .hero-container { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-    .hero-content { display: flex; flex-direction: column; align-items: center; }
-    .hero-actions { justify-content: center; }
-    .hero-subtitle { margin: 0 auto 40px; }
-    .card-float { display: none; } /* Hide floating cards on tablet to avoid overlap */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto; 
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    .hero-title { 
+        font-size: 2rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle { 
+        margin: 0 auto 25px; 
+        font-size: 0.95rem; 
+        line-height: 1.5;
+        max-width: 90%;
+    }
+    
+    .hero-container { 
+        display: flex; /* Stack content vertically */
+        flex-direction: column;
+        gap: 0;
+        padding-top: 0;
+    }
+
+    /* Content Alignment */
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .badge {
+        margin-bottom: 16px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    /* Stacked Buttons (Line by Line) */
+    .hero-actions {
+        display: flex;
+        flex-direction: column; /* Line by line */
+        gap: 12px;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto 30px;
+    }
+
+    .btn-primary, .btn-glass {
+        width: 100%;
+        justify-content: center;
+        padding: 0 20px;
+        font-size: 0.95rem;
+        height: 48px;
+        border-radius: 12px;
+    }
+
+    /* Stats */
+    .hero-stats {
+        padding-top: 20px;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+
+    .stat-value { font-size: 1.25rem; }
+    .stat-label { font-size: 0.85rem; }
+    
+    /* HIDE VISUAL to save scrolling space */
+    .hero-visual { display: none; }
+    .separator { display: none; }
 }
 
 @media (max-width: 600px) {
-    .btn-primary, .btn-glass { width: 100%; justify-content: center; }
-    .hero-actions { flex-direction: column; width: 100%; }
     .hero-stats { flex-wrap: wrap; justify-content: center; }
-    .separator { display: none; }
 }
 </style>

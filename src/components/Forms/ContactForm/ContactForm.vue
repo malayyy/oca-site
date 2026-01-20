@@ -158,6 +158,12 @@ async function handleSubmit() {
     z-index: 0;
 }
 
+@media (max-width: 768px) {
+    .glass-bg {
+        border-radius: 30px;
+    }
+}
+
 .wrapper {
     position: relative;
     z-index: 2;
@@ -306,9 +312,89 @@ async function handleSubmit() {
 }
 
 @media (max-width: 768px) {
-    .form-grid { grid-template-columns: 1fr; }
-    .component.contact-form { padding: 30px 20px; }
-    .decoration { display: none; }
-    .radio-group { width: 100%; justify-content: center; }
+    .form-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .component.contact-form { 
+        padding: 30px 15px !important;
+        margin: 30px auto 0 !important;
+        width: 90% !important;
+        max-width: 600px !important;
+    }
+    
+    .wrapper {
+        max-width: 100%;
+    }
+    
+    .decoration { 
+        display: none; 
+    }
+    
+    .radio-group { 
+        width: 100%; 
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row !important;
+        gap: 10px;
+    }
+    
+    .option-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+        flex: 1;
+        min-width: 140px;
+    }
+    
+    .input-group {
+        margin-bottom: 20px;
+    }
+    
+    .premium-input {
+        padding: 14px 18px;
+        font-size: 0.95rem;
+    }
+    
+    .submit-btn {
+        padding: 16px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 620px) {
+    .component.contact-form {
+        padding: 25px 12px !important;
+        border-radius: 30px;
+        margin: 30px auto 0 !important;
+        width: 90% !important;
+        max-width: 100% !important;
+    }
+    
+    .radio-group {
+        flex-direction: row !important;
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .option-btn {
+        flex: 1;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        min-width: 120px;
+    }
+    
+    .premium-input {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .premium-input.text-area {
+        min-height: 120px;
+    }
+    
+    .submit-btn {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
 }
 </style>

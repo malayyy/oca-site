@@ -53,8 +53,22 @@ const props = defineProps({
         border-right: 0;
         border-top: 2px solid var(--white);
         border-bottom: 2px solid var(--white);
-        padding: 50px 0;
+        padding: 40px 0;
+    }
+}
 
+@media screen and (max-width: 620px) {
+    .use-case-card-btn {
+        gap: 15px;
+    }
+    
+    #text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    #middle {
+        padding: 30px 0;
     }
 }
 </style>

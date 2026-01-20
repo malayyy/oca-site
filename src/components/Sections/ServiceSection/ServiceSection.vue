@@ -1,6 +1,6 @@
 <template>
     <section id="services" class="section-padding">
-        <div class="container">
+        <div class="container services-container">
             <div class="section-header animate-fade-up">
                 <span class="badge">Our Expertise</span>
                 <h2 class="section-title">Professional <span class="gradient-text">HVAC Services</span></h2>
@@ -68,5 +68,66 @@ const services = [
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+    
+    .services-container {
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    .section-header {
+        margin: 0 auto 40px !important;
+        padding: 0 20px !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .section-title,
+    .section-desc,
+    .badge {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .services-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px;
+        padding: 0 30px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .section-padding {
+        padding: 40px 0;
+    }
+    
+    .badge {
+        font-size: 0.75rem;
+    }
+    
+    .services-container {
+        padding: 0 !important;
+    }
+    
+    .section-header {
+        padding: 0 16px !important;
+        margin: 0 auto 40px !important;
+    }
+    
+    .services-grid {
+        padding: 0 20px !important;
+    }
 }
 </style>

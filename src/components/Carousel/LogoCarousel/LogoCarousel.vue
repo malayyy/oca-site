@@ -118,5 +118,55 @@ const logosReversed = computed(() => [...props.logos].reverse());
     from { transform: translateX(-100%); }
     to { transform: translateX(0%); }
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .logo-carousel {
+        margin-bottom: 80px;
+        gap: 35px;
+        padding: 15px 0;
+    }
+    
+    .logo-container {
+        gap: 50px;
+        padding-right: 50px;
+    }
+    
+    .logo {
+        transform: scale(1.2);
+    }
+    
+    :deep(svg), :deep(img) {
+        height: 35px;
+    }
+    
+    .logo:hover {
+        transform: scale(1.3);
+    }
+}
+
+@media (max-width: 620px) {
+    .logo-carousel {
+        margin-bottom: 60px;
+        gap: 25px;
+    }
+    
+    .logo-container {
+        gap: 40px;
+        padding-right: 40px;
+    }
+    
+    .logo {
+        transform: scale(1);
+    }
+    
+    :deep(svg), :deep(img) {
+        height: 30px;
+    }
+    
+    .logo:hover {
+        transform: scale(1.1);
+    }
+}
 </style>
 

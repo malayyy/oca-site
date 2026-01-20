@@ -182,4 +182,35 @@ p {
     display: flex;
     justify-content: center;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .project-detail {
+        padding: 80px 20px 60px;
+    }
+    
+    .project-header {
+        margin-right: 20px;
+    }
+    
+    .project-content {
+        padding: 30px 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 620px) {
+    .project-detail {
+        padding: 70px 16px 50px;
+    }
+    
+    .project-header {
+        margin-right: 16px;
+    }
+    
+    .project-content {
+        padding: 25px 25px;
+        margin-right: 25px;
+    }
+}
 </style>

@@ -104,23 +104,74 @@ function Expand() {
 }
 
 /* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .qna-card {
+        --padding: 25px 30px;
+        height: 70px;
+    }
+    
+    .text {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    #num {
+        font-size: 1.2rem;
+    }
+    
+    #title {
+        font-size: 1rem;
+        word-wrap: break-word;
+        flex: 1;
+    }
+    
+    .action {
+        height: 50px;
+        min-width: 50px;
+    }
+    
+    .expand-line {
+        height: 4px;
+        width: 28px;
+    }
+    
+    .bottom {
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+}
+
 @media screen and (max-width: 620px) {
     .qna-card {
-        --padding: 30px 40px;
-
-        width: 100%;
+        --padding: 20px 25px;
         height: 60px;
-        padding: var(--padding);
-        overflow: hidden;
     }
 
     .action {
         height: 40px;
+        min-width: 40px;
     }
 
     .expand-line {
         height: 3px;
         width: 25px;
+    }
+    
+    #num {
+        font-size: 1rem;
+    }
+    
+    #title {
+        font-size: 0.9rem;
+    }
+    
+    .bottom {
+        margin-top: 25px;
+        padding-top: 25px;
+    }
+    
+    .bottom .text {
+        font-size: 0.9rem;
     }
 }
 </style>

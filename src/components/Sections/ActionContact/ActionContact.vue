@@ -96,4 +96,39 @@ const icon = `
 #icon:hover {
     transform: translateY(-10px);
 }
+
+/* Mobile Responsive */
+@media (max-width: 930px) {
+    #about {
+        padding: 0 20px !important;
+    }
+    
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 0 !important;
+    }
+    
+    .simple-action-card {
+        width: calc(100% - 40px) !important;
+        margin: 0 20px !important;
+    }
+    
+    .container {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .simple-action-card {
+        width: calc(100% - 32px) !important;
+        margin: 0 16px !important;
+    }
+}
 </style>

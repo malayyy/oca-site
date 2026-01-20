@@ -164,42 +164,125 @@ footer {
 /* RESPONSIVE */
 @media screen and (max-width: 999px) {
     #contacts {
-        flex-direction: column;
-        align-items: initial;
-        gap: 50px;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 }
 
 @media screen and (max-width: 768px) {
     footer {
-        padding: 50px 20px;
+        padding: 50px 20px 30px;
         text-align: center;
+        border-radius: 30px 30px 0 0;
     }
 
-    #navigations, #links, #contacts, #physical-info, #rights {
+    #navigations {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        text-align: center;
-        gap: 30px;
+        gap: 25px;
+        margin-bottom: 50px;
     }
     
     #links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    #contacts {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+    
+    #physical-info {
+        align-items: center;
+        text-align: center;
         gap: 20px;
     }
 
     .contact-item {
         align-items: center;
+        text-align: center;
     }
     
     .contact-value {
         text-align: center;
-        word-break: break-word; /* Prevent overflow */
+        word-break: break-word;
+        font-size: 1.1rem;
     }
     
-    /* Ensure footer buttons center */
-    button, .cta-button {
-        margin: 0 auto;
+    #virtual-info {
+        padding: 30px 20px;
+        text-align: center;
+    }
+    
+    #virtual-info p {
+        font-size: 1rem;
+    }
+    
+    #rights {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 25px;
+        text-align: center;
+    }
+    
+    #copyright {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    footer {
+        padding: 40px 16px 25px;
+    }
+    
+    #navigations {
+        margin-bottom: 40px;
+    }
+    
+    #contacts {
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .contact-label {
+        font-size: 0.75rem !important;
+        padding: 3px 10px;
+        font-weight: 600;
+    }
+    
+    .contact-value {
+        font-size: 0.85rem !important;
+        line-height: 1.4;
+    }
+    
+    .contact-value a {
+        font-size: 0.85rem !important;
+    }
+    
+    #virtual-info {
+        padding: 25px 18px;
+    }
+    
+    #virtual-info p {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    #rights {
+        font-size: 0.75rem !important;
+    }
+    
+    #copyright {
+        font-size: 0.75rem !important;
+    }
+    
+    #rights a {
+        font-size: 0.75rem !important;
     }
 }
 </style>
