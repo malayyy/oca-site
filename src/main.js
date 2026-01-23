@@ -15,11 +15,11 @@ const head = createHead()
 
 app.use(createPinia());
 app.use(router);
+app.use(head);
 
 app.component('BasicButton', BasicButton);
 app.component('SectionTitle', SectionTitle);
 app.component('InfoCard', InfoCard);
 
-app.use(head)
 app.mount('#app');
 
