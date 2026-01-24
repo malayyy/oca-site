@@ -33,8 +33,11 @@ const scrollToContact = () => {
 
 <style scoped>
 .simple-action-card {
-    height: 350px;
+    height: auto;
+    min-height: 350px;
     position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .simple-action-card::before {
@@ -47,32 +50,45 @@ const scrollToContact = () => {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: 0.2s;
+    transition: 0.3s ease;
 }
 
 .container {
-    background-color: var(--gray);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     height: 100%;
-    border-radius: 45px;
+    border-radius: 30px;
     display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 50px;
+    box-sizing: border-box;
 }
 
 .action-info {
-    --padding: 60px;
-
-    max-width: 50%;
+    max-width: 60%;
     width: 100%;
-    padding: var(--padding);
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: space-between;
+    gap: 25px;
     position: relative;
     z-index: 2;
 }
 
+#text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
 #desc {
-    max-width: 450px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 550px;
+    margin-bottom: 10px;
 }
 
 #icon {
@@ -101,29 +117,37 @@ const scrollToContact = () => {
 
 @media screen and (max-width: 930px) {
     .simple-action-card {
-        height: auto;
+        min-height: auto;
     }
 
     #icon {
-        margin-left: 120px;
-        position: initial;
+        margin-left: 0;
+        position: relative;
+        top: 0;
+        right: 0;
     }
 
     .container {
-        padding-bottom: 60px;
-        display: flex;
+        padding: 40px;
         flex-direction: column;
         align-items: center;
+        gap: 30px;
     }
 
     .action-info {
-        gap: 30px;
+        max-width: 100%;
         align-items: center;
-        justify-content: initial;
         text-align: center;
     }
 
-    /* LISTENERS */
+    #text {
+        font-size: 2rem;
+    }
+
+    #desc {
+        max-width: 100%;
+    }
+
     #icon:hover {
         transform: translateY(0);
     }
@@ -135,6 +159,18 @@ const scrollToContact = () => {
         margin: 0 20px !important;
         box-sizing: border-box !important;
     }
+
+    .container {
+        padding: 35px 25px;
+    }
+
+    #text {
+        font-size: 1.75rem;
+    }
+
+    #desc {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 620px) {
@@ -142,22 +178,28 @@ const scrollToContact = () => {
         width: calc(100% - 32px) !important;
         margin: 0 16px !important;
     }
-    
-    .action-info {
-        --padding: 60px;
-        align-items: initial;
-        max-width: 90%;
-        margin-right: 42px;
+
+    .container {
+        padding: 30px 20px;
     }
 
-    #icon {
-        min-width: max-content;
+    #text {
+        font-size: 1.5rem;
+    }
+
+    #desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 }
 
 @media screen and (max-width: 480px) {
     .container {
-        padding-bottom: 0;
+        padding: 25px 18px;
+    }
+
+    #text {
+        font-size: 1.35rem;
     }
 
     #icon {
