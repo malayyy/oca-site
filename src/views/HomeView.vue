@@ -65,7 +65,7 @@ section {
 </style>
 
 <script setup>
-import { useHead } from '@vueuse/head'
+
 
 useHead({
   title: 'Best AC Service & Repair in Mumbai – Split AC Repair, HVAC Cleaning & Maintenance',
