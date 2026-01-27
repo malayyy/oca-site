@@ -63,3 +63,22 @@ section {
     }
 }
 </style>
+
+<script setup>
+import { useHead } from '@vueuse/head'
+
+useHead({
+  title: 'Best AC Service & Repair in Mumbai – Split AC Repair, HVAC Cleaning & Maintenance',
+  meta: [
+    {
+      name: 'description',
+      content: 'Expert AC service in Mumbai – Split AC & Window AC repair, professional HVAC cleaning & maintenance, fast service centre support, affordable AC service cost, LG/Voltas/Daikin/BlueStar/Hitachi/Samsung AC service. Book AC repair & cleaning now!'
+    },
+    {
+      name: 'keywords',
+      content: 'AC service Mumbai, AC repair Mumbai, ac service centre near me, split AC repair Mumbai, ac cleaning service cost, AC service cost, hvac cleaning services, professional HVAC cleaning services, air conditioning maintenance, AC repair near me, best AC repair service, AC service centre Mumbai, AC service near me, split AC repair near me, window AC repair Mumbai, Voltas AC service, LG AC service, Daikin AC service, Hitachi AC service, Lloyd AC service, Samsung AC service, Bluestar AC service, HVAC service Mumbai, emergency AC repair, AC gas refill Mumbai, AC maintenance services, HVAC cleaning Mumbai, affordable AC service Mumbai, AC tune up Mumbai
+'
+    }
+  ]
+})
+</script>
