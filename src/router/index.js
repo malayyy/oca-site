@@ -33,12 +33,6 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: () => import('@/views/AboutView.vue')
-        
-      meta: {
-    title: 'About Us | OCA Solution PVT LTD',
-    description: 'About the OCT solution pvt ltd'
-    }
-      
     },
     {
       path: '/services',
